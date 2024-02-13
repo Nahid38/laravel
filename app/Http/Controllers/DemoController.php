@@ -12,8 +12,17 @@ class DemoController extends Controller
 
     function DemoAction1(Request $request): array
     {
-         return $request->header() ;
-        
+         $name=$request->name;
+         $age=$request->age;
+         $address=$request->input(key:'address');
+         $postcode=$request->input(key:'postcode');
+         $city=$request->header(key:'city');
        
+         return array(
+            'name' =>$name,
+            'age' => $age,
+            'address' => $address,
+            'postcode' => $postcode,
+            'city' => $city);
     }
 }

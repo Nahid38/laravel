@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/demoaction/{name}/{age}', [DemoController::class,'DemoAction1']);
+Route::get('/demoaction', [DemoController::class,'DemoAction1']);

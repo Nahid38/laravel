@@ -12,17 +12,20 @@ class DemoController extends Controller
 
     function DemoAction1(Request $request): array
     {
-         $name=$request->name;
-         $age=$request->age;
-         $address=$request->input(key:'address');
-         $postcode=$request->input(key:'postcode');
-         $city=$request->header(key:'city');
-       
-         return array(
-            'name' =>$name,
-            'age' => $age,
-            'address' => $address,
-            'postcode' => $postcode,
-            'city' => $city);
+        $photoFile = $request->file(key: 'photo');
+        $FileSize = filesize($photoFile);
+        $FileType = filetype($photoFile);
+        $FileOrginalName = $photoFile->getClientOriginalName();
+        $FileTempName = $photoFile->getFilename();
+        $FileExtension = $photoFile->extension();
+
+        return array(
+            "Filesize"=>$FileSize,
+            "FileType"=>$FileType,
+            "FileOrginalName"=>$FileOrginalName,
+            "FileTempName"=>$FileTempName,
+            "FileExtension"=>$FileExtension
+        );
+        
     }
 }

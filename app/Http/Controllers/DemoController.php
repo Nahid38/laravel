@@ -10,10 +10,10 @@ class DemoController extends Controller
     //     return "This is my first request-response";
     // }
 
-    function DemoAction1(Request $request): string
+    function DemoAction1(Request $request): array
     {
-        $name = $request->input(key:'name') ;
-        $age = $request-> input(key:'age');
-        return "My Name is $name and my age is $age.";
+         return $request->header() ;
+        
+       
     }
 }

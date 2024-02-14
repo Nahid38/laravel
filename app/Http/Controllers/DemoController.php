@@ -10,16 +10,12 @@ class DemoController extends Controller
     //     return "This is my first request-response";
     // }
 
-    function DemoAction1(Request $request):bool
+    function DemoAction1(Request $request):string
     {
 
-        $photoFile=$request->file('photo');
-        $photoFile->storeAs('upload',$photoFile->getClientOriginalName());
-           // $photoFile->move(public_path('upload'), $fileName);
-        $photoFile->move(public_path('upload'),$photoFile->getClientOriginalName());
+   
 
-
-        return true;
+        return $request->ip();
         
     }
 }

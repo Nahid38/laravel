@@ -10,22 +10,16 @@ class DemoController extends Controller
     //     return "This is my first request-response";
     // }
 
-    function DemoAction1(Request $request): array
+    function DemoAction1(Request $request):bool
     {
-        $photoFile = $request->file(key: 'photo');
-        $FileSize = filesize($photoFile);
-        $FileType = filetype($photoFile);
-        $FileOrginalName = $photoFile->getClientOriginalName();
-        $FileTempName = $photoFile->getFilename();
-        $FileExtension = $photoFile->extension();
 
-        return array(
-            "Filesize"=>$FileSize,
-            "FileType"=>$FileType,
-            "FileOrginalName"=>$FileOrginalName,
-            "FileTempName"=>$FileTempName,
-            "FileExtension"=>$FileExtension
-        );
+        $photoFile=$request->file('photo');
+        $photoFile->storeAs('upload',$photoFile->getClientOriginalName());
+           // $photoFile->move(public_path('upload'), $fileName);
+        $photoFile->move(public_path('upload'),$photoFile->getClientOriginalName());
+
+
+        return true;
         
     }
 }

@@ -10,12 +10,12 @@ class DemoController extends Controller
     //     return "This is my first request-response";
     // }
 
-    function DemoAction1(Request $request):string
+    function DemoAction1(Request $request):array
     {
 
    
 
-        return $request->ip();
+        return $request->getAcceptableContentTypes();
         
     }
 }

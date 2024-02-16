@@ -15,7 +15,7 @@ class DemoController extends Controller
 
    
 
-        return $request->getAcceptableContentTypes();
+        return $request->cookie();
         
     }
 }

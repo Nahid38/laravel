@@ -10,12 +10,11 @@ class DemoController extends Controller
     //     return "This is my first request-response";
     // }
 
-    function DemoAction1(Request $request):array
+    function DemoAction1(Request $request): array|string|bool|null|int
     {
 
-   
 
-        return $request->cookie();
-        
+
+        return true;
     }
 }

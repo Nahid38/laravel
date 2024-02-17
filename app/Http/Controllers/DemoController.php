@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class DemoController extends Controller
@@ -10,11 +11,15 @@ class DemoController extends Controller
     //     return "This is my first request-response";
     // }
 
-    function DemoAction1(Request $request): array|string|bool|null|int
+    function DemoAction1(Request $request): JsonResponse
     {
 
+        $code = 401;
+        $content = array('name' => 'nahid');
 
 
-        return true;
+
+
+        return response()->json($content,$code);
     }
 }

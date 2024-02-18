@@ -7,19 +7,13 @@ use Illuminate\Http\Request;
 
 class DemoController extends Controller
 {
-    // function DemoAction():string{
-    //     return "This is my first request-response";
-    // }
 
-    function DemoAction1(Request $request): JsonResponse
-    {
-
-        $code = 401;
-        $content = array('name' => 'nahid');
-
-
-
-
-        return response()->json($content,$code);
+    function DemoAction1():string{
+        return redirect('/hello2');
     }
+
+    function DemoAction2():string{
+        return "hello2";
+    }
+  
 }

@@ -14,5 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/FileBinary', [DemoController::class,'FileBinary']);
-Route::get('/FileDownload', [DemoController::class,'FileDownload']);
+Route::get('/welcome', [DemoController::class,'demo']);

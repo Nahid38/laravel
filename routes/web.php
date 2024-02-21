@@ -14,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', [DemoController::class,'demo']);
+Route::get('/SessionPut/{email}', [DemoController::class,'SessionPut']);
+Route::get('/SessionPull', [DemoController::class,'SessionPull']);
+Route::get('/SessionForget', [DemoController::class,'SessionForget']);
+Route::get('/SessionFlush', [DemoController::class,'SessionFlush']);

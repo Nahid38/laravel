@@ -15,7 +15,7 @@ class demo
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $key=$request->header('Api-Key');
+        $key=$request->key;
         if($key=="nahid123"){
             return $next($request);
         }else{

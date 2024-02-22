@@ -9,17 +9,9 @@ class DemoController extends Controller
 {
 
 
-    function demoAction1():string{
-        return "hello1";
+    function demoAction1(Request $request):array{
+        return $request->header();
     }
-    function demoAction2():string{
-        return "hello2";
-    }
-    function demoAction3():string{
-        return "hello3";
-    }
-    function demoAction4():string{
-        return "hello4";
-    }
+
     
 }

@@ -15,11 +15,7 @@ class demo
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $key=$request->key;
-        if($key=="nahid123"){
-            return $next($request);
-        }else{
-            return response()->json('unathorized',401);
-        }
+        $request->headers->add(['email'=>'nahid@gmail.com']);
+        return $next($request);
     }
 }

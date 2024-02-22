@@ -6,7 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-    Route::get("/hello1/{key}", [DemoController::class,'demoAction1']);
-    Route::get("/hello2/{key}", [DemoController::class,'demoAction2']);
-    Route::get("/hello3/{key}", [DemoController::class,'demoAction3']);
-    Route::get("/hello4/{key}", [DemoController::class,'demoAction4']);
+    Route::get("/hello1", [DemoController::class,'demoAction1'])->middleware([demo::class]);

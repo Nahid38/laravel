@@ -9,8 +9,8 @@ class DemoController extends Controller
 {
 
 
-    function demoAction1(Request $request):array{
-        return $request->header();
+    function demoAction(Request $request):string{
+        return "Hello Nahid";
     }
 
     

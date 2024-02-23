@@ -6,4 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-    Route::get("/hello", [DemoController::class,'demoAction'])->middleware('throttle:5,1');
+    Route::get("/hello", [DemoController::class,'demoAction']);

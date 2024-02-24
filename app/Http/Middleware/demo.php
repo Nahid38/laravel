@@ -15,7 +15,7 @@ class demo
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $request->headers->add(['email'=>'nahid@gmail.com']);
+        $request->headers->remove('email');
         return $next($request);
     }
 }

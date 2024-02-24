@@ -9,9 +9,11 @@ class DemoController extends Controller
 {
 
 
-    function demoAction(Request $request):string{
-        return "Hello Nahid";
+    function __construct()
+    {
+        $this->middleware('demos');
     }
-
-    
+    function demoAction(Request $request):array{
+        return $request->header();
+    }
 }

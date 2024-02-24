@@ -1,13 +1,7 @@
 <?php
 
-use App\Http\Controllers\DemoController;
-use App\Http\Controllers\photoController;
-use App\Http\Controllers\VController;
-use App\Http\Middleware\demo;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-
-    Route::get("/hello", [DemoController::class,'demoAction']);
-    Route::get("/video", VController::class);
-    Route::resource('photo',photoController::class);
+Route::get("/",[HomeController::class,'page']);

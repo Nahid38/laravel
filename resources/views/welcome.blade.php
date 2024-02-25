@@ -1,5 +1,4 @@
-<h1> Welcome to the Laravel</h1>
-@foreach ($users as $item)
-    <p>This is user {{ $item['fname'] }} <br>
-        last name {{ $item['lname'] }} </p>
-@endforeach
+@include('component.header')
+@include('component.hero')
+@include('component.team')
+@include('component.footer')

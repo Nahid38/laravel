@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function page()
+    function page(Request $request)
     {
-        $data = ['msg' => 'This is messege'];
+        
+        $sum1=$request->num1;
+        $sum2=$request->num2;
+        $sum=$sum1+$sum2;
+        $data = ['msg' => $sum];
         return view('welcome', $data);
     }
 }

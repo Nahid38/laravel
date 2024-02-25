@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function page(){
-        return view('welcome');
+    function page()
+    {
+        $data = ['msg' => 'This is messege'];
+        return view('welcome', $data);
     }
 }

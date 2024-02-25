@@ -9,10 +9,13 @@ class HomeController extends Controller
     function page(Request $request)
     {
         
-        $sum1=$request->num1;
-        $sum2=$request->num2;
-        $sum=$sum1+$sum2;
-        $data = ['msg' => $sum];
-        return view('welcome', $data);
+       $user=[
+        ["fname"=>"Hablu","lname"=>"khan"],
+        ["fname"=>"Kablu","lname"=>"Chowdhury"],
+        ["fname"=>"Tablu","lname"=>"Hasan"]
+       ];
+       return view('welcome',['users'=>$user]);
     }
+
+
 }

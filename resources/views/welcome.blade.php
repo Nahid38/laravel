@@ -1,2 +1,5 @@
 <h1> Welcome to the Laravel</h1>
-<h2>{{$msg}} </h2>
+@foreach ($users as $item)
+    <p>This is user {{ $item['fname'] }} <br>
+        last name {{ $item['lname'] }} </p>
+@endforeach
